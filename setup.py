@@ -2,7 +2,6 @@ import versioneer
 
 from setuptools import setup
 
-
 setup(
     name='githubgrep',
     version=versioneer.get_version(),
@@ -13,5 +12,9 @@ setup(
     author_email='tim@sampson.fi',
     license='MIT',
     packages=['githubgrep'],
-    zip_safe=False
-)
+    entry_points={
+        'console_scripts': [
+            'ghgrep = githubgrep.grep:run',
+        ],
+    },
+    zip_safe=False)
